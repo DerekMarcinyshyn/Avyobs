@@ -1,7 +1,8 @@
 // setup up routers
 Meteor.Router.add({
-    '/'         : 'home',
-    '/submit/'  : 'post_submit'
+    '/'             : 'home',
+    '/submit/'      : 'post_submit',
+    '/map/'         : 'map'
 });
 
 
@@ -10,6 +11,5 @@ Meteor.startup(function() {
         // grab the current page from the router, so this re-runs every time it changes
         Meteor.Router.page();
 
-        console.log('yo');
     });
 });
