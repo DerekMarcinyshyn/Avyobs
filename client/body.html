@@ -1,10 +1,10 @@
 <template name="body">
 
     <div class="container template-{{pageName}}">
-        <a href="/submit/">Submit</a>
-        <a href="/">Home</a>
-
-        {{renderPage}}
+        <div class="row">
+            {{> nav}}
+            {{renderPage}}
+        </div>
     </div>
 
     {{> footer}}
