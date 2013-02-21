@@ -8,7 +8,10 @@ Template.post_submit.rendered = function() {
     // add map
     submitMapInitialize();
 
-
+    // show avalanche observations
+    $('#show_avi').click(function() {
+        $('#see_avi').toggle(this.checked);
+    });
 }
 
 
@@ -28,6 +31,8 @@ function submitMapInitialize() {
 
     google.maps.event.addListener(submitMap, 'click', function(event){
         google.maps.event.clearListeners(submitMap,'click');
+
+        $('#latlong').val(event.latLng);
 
         var submitMarker = new google.maps.Marker({
             position: event.latLng,

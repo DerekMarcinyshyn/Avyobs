@@ -1,16 +1,19 @@
 <template name="post_submit">
     <div class="container submit">
-        <h2>Submit Weather and Avalanche Obs</h2>
+        <h2>Submit Weather and Avalanche Observations</h2>
 
         <form class="form-horizontal">
 
+            <h3>Location</h3>
             <div class="control-group">
                 <label class="control-label">Location name</label>
                 <div class="controls"><input id="location" type="text" value="" placeholder="My Powder Stash"/></div>
             </div>
             <div class="control-group">
-                <label class="control-label">Lat / Long</label>
-                <div class="controls" id="submit_map"></div><br>
+                <label class="control-label">Click on Map<br>Drag for more precise location</label>
+                <div class="controls" id="submit_map"></div>
+                <br/>
+                <label class="control-label">Latitude / Longitude</label>
                 <div class="controls"><input id="latlong" type="text" value="" class="input-xlarge"/></div>
             </div>
             <div class="control-group">
@@ -24,6 +27,8 @@
                     <div id="setTimeButton" class="btn">Set current time</div>
                 </div>
             </div>
+
+            <h3>Weather Observations</h3>
             <div class="control-group">
                 <label class="control-label">Temperature</label>
                 <div class="controls"><input id="temp" type="number" value="" /></div>
@@ -67,6 +72,134 @@
                 </div>
             </div>
 
+            <h3>Snow Conditions</h3>
+            <div class="control-group">
+                <label class="control-label">Snow Surface</label>
+                <div class="controls">
+                    <select id="snow_surface">
+                        <option value="fresh">Fresh snow</option>
+                        <option value="wind">Wind blown</option>
+                        <option value="hoar">Surface hoar</option>
+                    </select>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Foot Penetration</label>
+                <div class="controls">
+                    <select id="foot_pen">
+                        <option value="none">None</option>
+                        <option value="boot_top">Boot Top</option>
+                        <option value="knee">Knee Deep</option>
+                        <option value="waist">Waist Deep</option>
+                        <option value="chest">Chest Deep</option>
+                        <option value="head">Over the Head</option>
+                    </select>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">New Snow cm</label>
+                <div class="controls">
+                    <select id="new_snow">
+                        <option value="snow_zero">0</option>
+                        <option value="snow_five">5</option>
+                        <option value="snow_ten">10</option>
+                        <option value="snow_fifteen">15</option>
+                        <option value="snow_twenty">20</option>
+                        <option value="snow_twenty_five">25</option>
+                        <option value="snow_thirty">30</option>
+                        <option value="snow_thirty_five">35</option>
+                        <option value="snow_forty">40</option>
+                        <option value="snow_forty_five">45</option>
+                        <option value="snow_fifty">50+</option>
+                    </select>
+                </div>
+            </div>
+
+            <h3>Avalanche Observations</h3>
+            <div class="control-group">
+                <label class="control-label">See any avalanches?</label>
+                <div class="controls">
+                    <input type="checkbox" name="see" id="show_avi" />
+                </div>
+            </div>
+            <div class="control-group" id="see_avi" style="display:none;">
+                <label class="control-label">Cause?</label>
+                <div class="controls">
+                    <select id="avi_cause">
+                        <option value="avi_natural">Natural</option>
+                        <option value="avi_rider_accidental">Rider Accidental</option>
+                        <option value="avi_rider_controlled">Rider Controlled</option>
+                        <option value="avi_snowmobile">Snowmobile</option>
+                        <option value="avi_helicopter">Helicopter</option>
+                        <option value="avi_explosives">Explosives</option>
+                    </select>
+                </div>
+                <br/>
+                <label class="control-label">How many?</label>
+                <div class="controls">
+                    <select id="avi_amount">
+                        <option value="avi_none">None</option>
+                        <option value="avi_one">One</option>
+                        <option value="avi_few">Few</option>
+                        <option value="avi_many">Many</option>
+                        <option value="avi_lots">Lots</option>
+                    </select>
+                </div>
+                <br/>
+                <label class="control-label">Avalanche Size</label>
+                <div class="controls">
+                    <select id="avi_size">
+                        <option value="avi_size_none">1</option>
+                        <option value="avi_size_two">2</option>
+                        <option value="avi_size_two_five">2.5</option>
+                        <option value="avi_size_three">3</option>
+                        <option value="avi_size_three_five">3.5</option>
+                        <option value="avi_size_four">4</option>
+                        <option value="avi_size_four_five">4.5</option>
+                        <option value="avi_size_five">5</option>
+                    </select>
+                </div>
+                <br/>
+                <label class="control-label">Aspect</label>
+                <div class="controls">
+                    <select id="avi_aspect">
+                        <option value="avi_north">North</option>
+                        <option value="avi_north_west">North West</option>
+                        <option value="avi_west">West</option>
+                        <option value="avi_south_west">South West</option>
+                        <option value="avi_south">South</option>
+                        <option value="avi_south_east">South East</option>
+                        <option value="avi_west">East</option>
+                        <option value="avi_north_east">North East</option>
+                        <option value="avi_all">All</option>
+                    </select>
+                </div>
+                <br/>
+                <label class="control-label">Average Crown Depth</label>
+                <div class="controls">
+                    <select id="avi_depth">
+                        <option value="avi_crown_ten">10</option>
+                        <option value="avi_crown_twenty">20</option>
+                        <option value="avi_crown_thirty">30</option>
+                        <option value="avi_crown_thirty_five">40</option>
+                        <option value="avi_crown_fifty">50</option>
+                        <option value="avi_crown_sixty">60</option>
+                        <option value="avi_crown_seventy">70</option>
+                        <option value="avi_crown_eighty">80</option>
+                        <option value="avi_crown_ninety">90</option>
+                        <option value="avi_crown_hundred">100</option>
+                        <option value="avi_crown_hundred_twenty">120</option>
+                        <option value="avi_crown_hundred_forty">140</option>
+                        <option value="avi_crown_hundred_sixty">160</option>
+                        <option value="avi_crown_hundred_eighty">180</option>
+                        <option value="avi_crown_two_hundred">200</option>
+                        <option value="avi_crown_two_hundred_fifty">250</option>
+                        <option value="avi_crown_three_hundred">300+</option>
+                    </select>
+                </div>
+
+
+            </div>
 
 
 
