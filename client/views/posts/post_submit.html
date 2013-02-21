@@ -1,5 +1,76 @@
 <template name="post_submit">
     <div class="container submit">
-        This is the post_submit.
+        <h2>Submit Weather and Avalanche Obs</h2>
+
+        <form class="form-horizontal">
+
+            <div class="control-group">
+                <label class="control-label">Location name</label>
+                <div class="controls"><input id="location" type="text" value="" /></div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Date</label>
+                <div class="controls"><input id="date" type="text" value="" /></div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Time</label>
+                <div class="controls">
+                    <input id="time" type="text" value="" class="time ui-timepicker-input" />
+                    <div id="setTimeButton" class="btn">Set current time</div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Temperature</label>
+                <div class="controls"><input id="temp" type="number" value="" /></div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"></label>
+                <div class="controls">
+                    <label class="radio inline">
+                        <input id="temp_measured" type="radio" value="1" name="temp_value" /> Temp measured
+                    </label>
+                    <label class="radio inline">
+                        <input id="temp_guessed" type="radio" value="2" name="temp_value" /> Temp guessed
+                    </label>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Wind</label>
+                <div class="controls">
+                    <select id="wind">
+                        <option value="north">North</option>
+                        <option value="north_west">North West</option>
+                        <option value="west">West</option>
+                        <option value="south_west">South West</option>
+                        <option value="south">South</option>
+                        <option value="south_east">South East</option>
+                        <option value="west">East</option>
+                        <option value="north_east">North East</option>
+                    </select>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Wind Speed</label>
+                <div class="controls">
+                    <select id="wind_speed">
+                        <option value="calm">Calm</option>
+                        <option value="light">Light</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="strong">Strong</option>
+                        <option value="very_strong">Very Strong</option>
+                    </select>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="form-actions">
+                <input type="submit" value="Submit" class="btn btn-success" />
+            </div>
+        </form>
+
+
     </div>
 </template>

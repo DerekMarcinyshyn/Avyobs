@@ -1,8 +1,13 @@
 html { height: 100%; }
 
-body { height: 100%;}
+body { height: 100%; background: url(/img/subtle_grunge.png) repeat; color: #333; }
+
+.navbar-inner { background: url(/img/burried.png) repeat; }
+.navbar .nav > li > a, .navbar .brand { color: #eee; text-shadow: 0 1px 0 #000; }
+.navbar .nav > li > a:hover { color: #999; }
 
 .map, .template-map, .template-map .row, .template-map .container-fluid { min-height:100%; height:100%; width:100%;}
+.map { color: #222; }
 
 .container-fluid { padding-left: 0; padding-right: 0; }
 
@@ -17,3 +22,10 @@ body { height: 100%;}
     width: auto;
     height: auto;
 }
+
+.form-actions {
+    background-color: transparent;
+    border-top: none;
+}
+
+.copyright { font-size: 11px; text-shadow: 0 1px 0 #ddd; float:right; }
