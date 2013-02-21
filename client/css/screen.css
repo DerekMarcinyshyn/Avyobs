@@ -9,6 +9,9 @@ body { height: 100%; background: url(/img/subtle_grunge.png) repeat; color: #333
 .map, .template-map, .template-map .row, .template-map .container-fluid { min-height:100%; height:100%; width:100%;}
 .map { color: #222; }
 
+#submit_map { height:300px; width: 350px; }
+#submit_map img { max-width: none !important; }
+
 .container-fluid { padding-left: 0; padding-right: 0; }
 
 .row { margin-left: 0;}
