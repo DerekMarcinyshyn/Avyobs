@@ -1,5 +1,19 @@
-body {
-    padding-top: 41px;
-}
+html { height: 100%; }
 
-.map { height:800px; width:100%; background: #eee;}
+body { height: 100%;}
+
+.map, .template-map, .template-map .row, .template-map .container-fluid { min-height:100%; height:100%; width:100%;}
+
+.container-fluid { padding-left: 0; padding-right: 0; }
+
+.row { margin-left: 0;}
+
+.fill {
+    top: 40px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    width: auto;
+    height: auto;
+}
