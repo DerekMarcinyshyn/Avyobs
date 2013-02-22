@@ -2,28 +2,30 @@
     <div class="container submit">
         <h2>Submit Weather and Avalanche Observations</h2>
 
+        <p class="red"><i class="icon-star"></i> required field</p>
+
         <form class="form-horizontal">
 
             <h3>Location</h3>
             <div class="control-group">
                 <label class="control-label">Location name</label>
-                <div class="controls"><input id="location" type="text" value="" placeholder="My Powder Stash"/></div>
+                <div class="controls"><input id="location" type="text" value="" placeholder="My Powder Stash" class="required"/> <i class="icon-star"></i></div>
             </div>
             <div class="control-group">
                 <label class="control-label">Click on Map<br>Drag for more precise location</label>
                 <div class="controls" id="submit_map"></div>
                 <br/>
                 <label class="control-label">Latitude / Longitude</label>
-                <div class="controls"><input id="latlong" type="text" value="" class="input-xlarge"/></div>
+                <div class="controls"><input id="latLng" type="text" value="" class="input-xlarge required"/> <i class="icon-star"></i></div>
             </div>
             <div class="control-group">
                 <label class="control-label">Date</label>
-                <div class="controls"><input id="date" type="text" value="" /></div>
+                <div class="controls"><input id="date" type="text" value="" class="required" /> <i class="icon-star"></i></div>
             </div>
             <div class="control-group">
                 <label class="control-label">Time</label>
                 <div class="controls">
-                    <input id="time" type="text" value="" class="time ui-timepicker-input" />
+                    <input id="time" type="text" value="" class="time ui-timepicker-input required" /> <i class="icon-star"></i>
                     <div id="setTimeButton" class="btn">Set current time</div>
                 </div>
             </div>
@@ -37,10 +39,10 @@
                 <label class="control-label"></label>
                 <div class="controls">
                     <label class="radio inline">
-                        <input id="temp_measured" type="radio" value="1" name="temp_value" /> Temp measured
+                        <input id="tempMeasured" type="radio" value="1" name="tempMeasure" /> Temp measured
                     </label>
                     <label class="radio inline">
-                        <input id="temp_guessed" type="radio" value="2" name="temp_value" /> Temp guessed
+                        <input id="tempGuessed" type="radio" value="2" name="tempMeasure" /> Temp guessed
                     </label>
                 </div>
             </div>
@@ -49,25 +51,25 @@
                 <div class="controls">
                     <select id="wind">
                         <option value="north">North</option>
-                        <option value="north_west">North West</option>
+                        <option value="northWest">North West</option>
                         <option value="west">West</option>
-                        <option value="south_west">South West</option>
+                        <option value="southWest">South West</option>
                         <option value="south">South</option>
-                        <option value="south_east">South East</option>
+                        <option value="southWast">South East</option>
                         <option value="west">East</option>
-                        <option value="north_east">North East</option>
+                        <option value="northEast">North East</option>
                     </select>
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label">Wind Speed</label>
                 <div class="controls">
-                    <select id="wind_speed">
+                    <select id="windSpeed">
                         <option value="calm">Calm</option>
                         <option value="light">Light</option>
                         <option value="moderate">Moderate</option>
                         <option value="strong">Strong</option>
-                        <option value="very_strong">Very Strong</option>
+                        <option value="veryStrong">Very Strong</option>
                     </select>
                 </div>
             </div>
@@ -76,7 +78,7 @@
             <div class="control-group">
                 <label class="control-label">Snow Surface</label>
                 <div class="controls">
-                    <select id="snow_surface">
+                    <select id="snowSurface">
                         <option value="fresh">Fresh snow</option>
                         <option value="wind">Wind blown</option>
                         <option value="hoar">Surface hoar</option>
@@ -86,7 +88,7 @@
             <div class="control-group">
                 <label class="control-label">Foot Penetration</label>
                 <div class="controls">
-                    <select id="foot_pen">
+                    <select id="footPen">
                         <option value="none">None</option>
                         <option value="boot_top">Boot Top</option>
                         <option value="knee">Knee Deep</option>
@@ -99,7 +101,7 @@
             <div class="control-group">
                 <label class="control-label">New Snow cm</label>
                 <div class="controls">
-                    <select id="new_snow">
+                    <select id="newSnow">
                         <option value="snow_zero">0</option>
                         <option value="snow_five">5</option>
                         <option value="snow_ten">10</option>
@@ -119,96 +121,108 @@
             <div class="control-group">
                 <label class="control-label">See any avalanches?</label>
                 <div class="controls">
-                    <input type="checkbox" name="see" id="show_avi" />
+                    <input type="checkbox" name="see" id="showAvi" />
                 </div>
             </div>
-            <div class="control-group" id="see_avi" style="display:none;">
+            <div class="control-group" id="seeAvi" style="display:none;">
                 <label class="control-label">Cause?</label>
                 <div class="controls">
-                    <select id="avi_cause">
-                        <option value="avi_natural">Natural</option>
-                        <option value="avi_rider_accidental">Rider Accidental</option>
-                        <option value="avi_rider_controlled">Rider Controlled</option>
-                        <option value="avi_snowmobile">Snowmobile</option>
-                        <option value="avi_helicopter">Helicopter</option>
-                        <option value="avi_explosives">Explosives</option>
+                    <select id="aviCause">
+                        <option value="aviNatural">Natural</option>
+                        <option value="aviRiderAccidental">Rider Accidental</option>
+                        <option value="aviRiderControlled">Rider Controlled</option>
+                        <option value="aviSnowmobile">Snowmobile</option>
+                        <option value="aviHelicopter">Helicopter</option>
+                        <option value="aviExplosives">Explosives</option>
                     </select>
                 </div>
                 <br/>
                 <label class="control-label">How many?</label>
                 <div class="controls">
-                    <select id="avi_amount">
-                        <option value="avi_none">None</option>
-                        <option value="avi_one">One</option>
-                        <option value="avi_few">Few</option>
-                        <option value="avi_many">Many</option>
-                        <option value="avi_lots">Lots</option>
+                    <select id="aviAmount">
+                        <option value="aviNone">None</option>
+                        <option value="aviOne">One</option>
+                        <option value="aviFew">Few</option>
+                        <option value="aviMany">Many</option>
+                        <option value="aviLots">Lots</option>
                     </select>
                 </div>
                 <br/>
                 <label class="control-label">Avalanche Size</label>
                 <div class="controls">
-                    <select id="avi_size">
-                        <option value="avi_size_none">1</option>
-                        <option value="avi_size_two">2</option>
-                        <option value="avi_size_two_five">2.5</option>
-                        <option value="avi_size_three">3</option>
-                        <option value="avi_size_three_five">3.5</option>
-                        <option value="avi_size_four">4</option>
-                        <option value="avi_size_four_five">4.5</option>
-                        <option value="avi_size_five">5</option>
+                    <select id="aviSize">
+                        <option value="aviSizeNone">1</option>
+                        <option value="aviSizeTwo">2</option>
+                        <option value="aviSizeTwoFive">2.5</option>
+                        <option value="aviSizeThree">3</option>
+                        <option value="aviSizeThreeFive">3.5</option>
+                        <option value="aviSizeFour">4</option>
+                        <option value="aviSizeFourFive">4.5</option>
+                        <option value="aviSizeFive">5</option>
                     </select>
                 </div>
                 <br/>
                 <label class="control-label">Aspect</label>
                 <div class="controls">
-                    <select id="avi_aspect">
-                        <option value="avi_north">North</option>
-                        <option value="avi_north_west">North West</option>
-                        <option value="avi_west">West</option>
-                        <option value="avi_south_west">South West</option>
-                        <option value="avi_south">South</option>
-                        <option value="avi_south_east">South East</option>
-                        <option value="avi_west">East</option>
-                        <option value="avi_north_east">North East</option>
-                        <option value="avi_all">All</option>
+                    <select id="aviAspect">
+                        <option value="aviNorth">North</option>
+                        <option value="aviNorthWest">North West</option>
+                        <option value="aviWest">West</option>
+                        <option value="aviSouthWest">South West</option>
+                        <option value="aviSouth">South</option>
+                        <option value="aviSouthEast">South East</option>
+                        <option value="aviEast">East</option>
+                        <option value="aviNorthEast">North East</option>
+                        <option value="aviAll">All</option>
+                    </select>
+                </div>
+                <br/>
+                <label class="control-label">Elevation</label>
+                <div class="controls">
+                    <select id="aviElevation">
+                        <option value="belowTreeline">Below Treeline</option>
+                        <option value="treeline">Treeline</option>
+                        <option value="alpine">Alpine</option>
+                        <option value="allElevations">All Elevations</option>
                     </select>
                 </div>
                 <br/>
                 <label class="control-label">Average Crown Depth</label>
                 <div class="controls">
-                    <select id="avi_depth">
-                        <option value="avi_crown_ten">10</option>
-                        <option value="avi_crown_twenty">20</option>
-                        <option value="avi_crown_thirty">30</option>
-                        <option value="avi_crown_thirty_five">40</option>
-                        <option value="avi_crown_fifty">50</option>
-                        <option value="avi_crown_sixty">60</option>
-                        <option value="avi_crown_seventy">70</option>
-                        <option value="avi_crown_eighty">80</option>
-                        <option value="avi_crown_ninety">90</option>
-                        <option value="avi_crown_hundred">100</option>
-                        <option value="avi_crown_hundred_twenty">120</option>
-                        <option value="avi_crown_hundred_forty">140</option>
-                        <option value="avi_crown_hundred_sixty">160</option>
-                        <option value="avi_crown_hundred_eighty">180</option>
-                        <option value="avi_crown_two_hundred">200</option>
-                        <option value="avi_crown_two_hundred_fifty">250</option>
-                        <option value="avi_crown_three_hundred">300+</option>
+                    <select id="aviDepth">
+                        <option value="aviCrownTen">10</option>
+                        <option value="aviCrownTwenty">20</option>
+                        <option value="aviCrownThirty">30</option>
+                        <option value="aviCrownThirtyFive">40</option>
+                        <option value="aviCrownFifty">50</option>
+                        <option value="aviCrownSixty">60</option>
+                        <option value="aviCrownSeventy">70</option>
+                        <option value="aviCrownEighty">80</option>
+                        <option value="aviCrownNinety">90</option>
+                        <option value="aviCrownHundred">100</option>
+                        <option value="aviCrownHundredTwenty">120</option>
+                        <option value="aviCrownHundredForty">140</option>
+                        <option value="aviCrownHundredSixty">160</option>
+                        <option value="aviCrownHundredEighty">180</option>
+                        <option value="aviCrownTwoHundred">200</option>
+                        <option value="aviCrownTwoHundredFifty">250</option>
+                        <option value="aviCrownThreeHundred">300+</option>
                     </select>
                 </div>
-
-
             </div>
 
-
-
+            <h3>Comments</h3>
+            <div class="control-group">
+                <label class="control-label">Share more details</label>
+                <div class="controls">
+                    <textarea type="text" id="comments" value="" rows="8" class="comments"></textarea>
+                </div>
+            </div>
 
             <div class="form-actions">
+                <div class="submitMessage"></div>
                 <input type="submit" value="Submit" class="btn btn-success" />
             </div>
         </form>
-
-
     </div>
 </template>
