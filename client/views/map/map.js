@@ -14,8 +14,6 @@ function initialize() {
 
     var cloudLayer = new google.maps.weather.CloudLayer();
     cloudLayer.setMap(map);
-
-
 }
 
 Template.map.rendered = function(){

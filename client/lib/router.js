@@ -1,8 +1,8 @@
 // setup up routers
 Meteor.Router.add({
     '/'             : 'home',
-    '/submit/'      : 'post_submit',
-    '/map/'         : 'map'
+    '/submit'       : 'post_submit',
+    '/map'          : 'map'
 });
 
 
