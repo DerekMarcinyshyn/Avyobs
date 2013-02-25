@@ -29,10 +29,11 @@ Template.post_submit.events = {
                 isSubmitFormValid = false;
                 $(this).addClass('highlight');
                 $(e.target).removeClass('disabled');
-                //$('.submitMessage').show();
                 $('.submitMessage').show().html('Sorry you have required fields.');
+                $('html,body').delay(2000).animate({scrollTop:0}, 'slow');
 
             } else {
+                // TODO: post to database logged in user only
                 // post to database
                 $(this).removeClass('highlight');
 
