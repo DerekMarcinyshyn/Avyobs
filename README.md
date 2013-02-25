@@ -8,7 +8,8 @@ A work in progress...
 
 * Twitter Bootstrap for responsive design
 * Google Maps for visuals
-* Allow users to submit their observations
+* Grabs browser GeoLocation to center map
+* Allow users to submit their weather and avalanche observations
 * Display weather around British Columbia
 
 ## Background
@@ -16,3 +17,5 @@ A work in progress...
 Since I live in Revelstoke, the app will begin with this general area to start for beta testing.
 
  [1]: http://meteor.com/
+
+ A work in progress...
