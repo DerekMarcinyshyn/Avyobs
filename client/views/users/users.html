@@ -1,0 +1,23 @@
+<template name="users">
+    <div class="grid">
+        <div class="user-table grid-block">
+            <h1>Users</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <td colspan="2">Name</td>
+                        <td>Member since</td>
+                        <td>Email</td>
+                        <td>Posts</td>
+                        <td>Delete</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each users}}
+                        {{> user_item}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</template>
