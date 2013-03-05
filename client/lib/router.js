@@ -1,4 +1,15 @@
 (function() {
+    post = function(id) {
+        Session.set('selectedPostId', id);
+        return 'map';
+    };
+
+    post_edit = function(id) {
+        Session.set('selectedPostId', id);
+        return 'post_edit';
+    };
+
+
     // setup up routers
     Meteor.Router.add({
         '/'                 : 'home',
@@ -9,7 +20,9 @@
         '/account'          : 'user_edit',
         '/forgot_password'  : 'user_password',
         '/users/:id'        : 'user_profile',
-        '/users/:id/edit'   : 'user_edit'
+        '/users/:id/edit'   : 'user_edit',
+        '/signin'           : 'user_signin',
+        '/signup'           : 'user_signup'
     });
 
     Meteor.Router.filters({
@@ -46,7 +59,7 @@
                 return 'loading';
 
             // otherwise the error tells us what to show
-            return error;
+            return 'user_signin';
         },
 
         isLoggedOut: function(page) {
@@ -80,7 +93,7 @@
     Meteor.Router.filter('requireProfile');
     //Meteor.Router.filter('requireLogin', {only: ['post_submit']});
     //Meteor.Router.filter('isLoggedOut', {only: ['user_signin', 'user_signup']});
-    //Meteor.Router.filter('canPost', {only: ['post_submit']});
+    Meteor.Router.filter('canPost', {only: ['post_submit']});
     Meteor.Router.filter('canEdit', {only: ['post_edit']});
     Meteor.Router.filter('requirePost', {only: ['post_edit']});
 

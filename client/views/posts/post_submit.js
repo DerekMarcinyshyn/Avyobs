@@ -1,4 +1,19 @@
+Template.post_submit.helpers({
+    users: function() {
+        return Meteor.users.find();
+    },
+    userName: function() {
+        return getDisplayName(this);
+    },
+    isSelected: function() {
+        var post = Posts.findOne(Session.get('selectedPostId'));
+        return post && this._id == post.userId;
+    }
+});
+
 Template.post_submit.rendered = function() {
+    Session.set('selectedPostId', null);
+
     $('#date').datepicker();
     $('#time').timepicker();
     $('#setTimeButton').on('click', function() {

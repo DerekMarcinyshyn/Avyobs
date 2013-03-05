@@ -6,6 +6,8 @@ body { height: 100%; background: url(/img/subtle_grunge.png) repeat; color: #333
 .navbar .nav > li > a, .navbar .brand { color: #eee; text-shadow: 0 1px 0 #000; }
 .navbar .nav > li > a:hover { color: #999; }
 
+#loading { margin-top: 60px; }
+
 .login-buttons-dropdown-align-right { float:right; margin-top: 12px; }
 a#login-sign-in-link.login-link-text, a#login-name-link.login-link-text { color: #ccc; text-decoration: none; }
 a#login-sign-in-link.login-link-text:hover, a#login-name-link.login-link-text:hover { color: #fff; }

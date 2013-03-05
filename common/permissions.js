@@ -26,34 +26,15 @@ canView = function(user, returnError){
     }
 }
 canPost = function(user, returnError){
-    var user=(typeof user === 'undefined') ? Meteor.user() : user;
+    var user = (typeof user === 'undefined') ? Meteor.user() : user;
 
-    // console.log('canPost', user, action, getSetting('requirePostInvite'));
-    if(Meteor.isClient && !Session.get('settingsLoaded'))
-        return false;
+    //console.log('canPost', user);
 
     if(!user){
         return returnError ? "no_account" : false;
-    } else if (isAdmin(user)) {
-        return true;
-    } else if (getSetting('requirePostInvite')) {
-        if (user.isInvited) {
-            return true;
-        } else {
-            return returnError ? "no_invite" : false;
-        }
     } else {
         return true;
     }
-}
-canComment = function(user, returnError){
-    return canPost(user, returnError);
-}
-canUpvote = function(user, collection, returnError){
-    return canPost(user, returnError);
-}
-canDownvote = function(user, collection, returnError){
-    return canPost(user, returnError);
 }
 canEdit = function(user, item, returnError){
     var user=(typeof user === 'undefined') ? Meteor.user() : user;
