@@ -1,0 +1,35 @@
+<template name="user_signup">
+    <div class="container">
+        <div class="user-signup">
+            <h3>Create New Account</h3>
+            <div class="facebook-signup auth">
+                <a class="facebook-button btn btn-info" href="#">Sign Up with Facebook</a>
+            </div>
+            <div class="twitter-signup auth">
+                <a class="twitter-button btn btn-info" href="#">Sign Up with Twitter</a>
+            </div>
+            <div class="google-signup auth">
+                <a class="google-button btn btn-info" href="#">Sign Up with Google</a>
+            </div>
+            <form>
+                <div class="control-group">
+                    <label>Username</label>
+                    <div class="controls"><input id="username" name="username" type="text" value="" /></div>
+                </div>
+                <div class="control-group">
+                    <label>Email</label>
+                    <div class="controls"><input id="email" name="email" type="text" value="" /></div>
+                </div>
+                <div class="control-group">
+                    <label>Password</label>
+                    <div class="controls"><input id="password" name="password" type="password" value="" /></div>
+                </div>
+                <div class="form-actions">
+                    <input class="btn btn-success" value="Sign Up" type="submit" />
+
+                </div>
+            </form>
+            <p>Already have an account? <a href="/signin" class="btn">Sign In</a></p>
+        </div>
+    </div>
+</template>

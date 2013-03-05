@@ -8,11 +8,20 @@ body { height: 100%; background: url(/img/subtle_grunge.png) repeat; color: #333
 
 #loading { margin-top: 60px; }
 
+.error-message {
+    border:solid 1px #FBD3C6;
+    background:#FDE4E1;
+    color:#CB4721;
+    padding: 4px 10px;
+    margin: 10px 0;
+}
+
 .login-buttons-dropdown-align-right { float:right; margin-top: 12px; }
 a#login-sign-in-link.login-link-text, a#login-name-link.login-link-text { color: #ccc; text-decoration: none; }
 a#login-sign-in-link.login-link-text:hover, a#login-name-link.login-link-text:hover { color: #fff; }
 #login-buttons a, .accounts-dialog a { text-decoration:none; }
 .account-link { margin: 4px 0 10px 0; padding: 6px 60px; }
+.auth { margin-bottom: 8px; }
 
 .map, .template-map, .template-map .row, .template-map .container-fluid { min-height:100%; height:100%; width:100%;}
 .map { color: #222; }
@@ -37,6 +46,7 @@ a#login-sign-in-link.login-link-text:hover, a#login-name-link.login-link-text:ho
 .form-actions {
     background-color: transparent;
     border-top: none;
+    padding-left:0;
 }
 
 .caution { background: #a3000f; color: #fff; border: 1px solid #666; box-shadow: inset 0 1px 0 #333; }

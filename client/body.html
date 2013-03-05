@@ -3,7 +3,9 @@
     <div class="template-{{pageName}}">
         <div class="row">
             {{> nav}}
-            {{> error}}
+            <div class="container">
+                {{> error}}
+            </div>
             {{renderPage}}
         </div>
     </div>
