@@ -1,7 +1,8 @@
 (function() {
     post = function(id) {
         Session.set('selectedPostId', id);
-        return 'map';
+        //return 'map';
+        return 'post_page';
     };
 
     post_edit = function(id) {
@@ -22,7 +23,8 @@
         '/users/:id'        : 'user_profile',
         '/users/:id/edit'   : 'user_edit',
         '/signin'           : 'user_signin',
-        '/signup'           : 'user_signup'
+        '/signup'           : 'user_signup',
+        '/posts/:id'        : post
     });
 
     Meteor.Router.filters({

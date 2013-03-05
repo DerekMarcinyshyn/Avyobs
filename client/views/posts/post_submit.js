@@ -48,11 +48,8 @@ Template.post_submit.events = {
                 $('html,body').delay(2000).animate({scrollTop:0}, 'slow');
 
             } else {
-                // TODO: post to database logged in user only
                 // post to database
                 $(this).removeClass('highlight');
-
-
             }
         });
 
@@ -99,6 +96,20 @@ Template.post_submit.events = {
             };
 
             console.log(properties);
+
+            // post to database
+            Meteor.call('post', properties, function(error, post) {
+                if (error) {
+                    throwError(error.reason);
+                    clearSeenErrors();
+                    $(e.target).removeClass('disabled');
+                    console.log(error.details);
+                } else {
+                    // navigate to the map
+                    Meteor.Router.to('/posts/' + post.postId);
+                }
+
+            });
         }
     }
 };

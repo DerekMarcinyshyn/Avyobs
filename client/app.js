@@ -20,3 +20,4 @@ Meteor.subscribe('allUsers');
 
 // ** Posts **
 Posts = new Meteor.Collection('posts');
+Meteor.subscribe('posts');
