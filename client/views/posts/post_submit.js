@@ -23,7 +23,7 @@ Template.post_submit.rendered = function() {
     // add map
     submitMapInitialize();
 
-    // show avalanche observations
+    // toggle avalanche observations
     $('#showAvi').click(function() {
         $('#seeAvi').slideToggle(this.checked);
     });

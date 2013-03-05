@@ -1,7 +1,9 @@
 Template.post_page.helpers({
     post: function() {
-        var post = Posts.findOne(Session.get('selectedPostId'));
-        console.log(post);
-        return post;
+        var obs = Posts.findOne(Session.get('selectedPostId'));
+        return obs;
+    },
+    canView: function() {
+        return true;
     }
 });

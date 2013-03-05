@@ -4,9 +4,7 @@ Template.post_item.preserve({
 
 Template.post_item.helpers({
     currentPost: function() {
+        console.log(this);
         return this;
-    },
-    author: function() {
-        return this.date;
     }
 });

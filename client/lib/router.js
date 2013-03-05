@@ -1,4 +1,8 @@
 (function() {
+
+    // do we need to flush the sessions
+    Meteor.flush();
+
     post = function(id) {
         Session.set('selectedPostId', id);
         //return 'map';

@@ -14,10 +14,22 @@ Meteor.publish('post', function(id) {
     return Posts.find(id);
 });
 
+// full set of posts
+Meteor.publish('posts', function() {
+    return Posts.find();
+});
+
+Meteor.publish('paginatedPosts', function(find, options, limit) {
+    options = options || {};
+    options.limit = limit;
+
+    return Posts.find(find || {}, options);
+});
+
 // FIXME -- check all docs, not just the first one.
 Meteor.startup(function () {
     Posts.allow({
-        insert: function() {
+        insert: function(userId, doc) {
             if (userId) {
                 doc.userId = userId;
                 return true;
