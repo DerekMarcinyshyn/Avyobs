@@ -66,3 +66,5 @@ a#login-sign-in-link.login-link-text:hover, a#login-name-link.login-link-text:ho
 }
 
 .copyright { font-size: 11px; text-shadow: 0 1px 0 #ddd; float:right; }
+
+td { width: 200px; }

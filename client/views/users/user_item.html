@@ -1,0 +1,16 @@
+<template name="user_item">
+    <tr class="user">
+        <td><a href="/users/{{_id}}/edit">{{displayName}}</a></td>
+        <td>{{createdAtFormatted}}</td>
+        <td>{{email}}</td>
+        <td>
+            <a href="#">{{postsCount}}</a>
+            <ul class="posts-list hidden">
+                {{#each posts}}
+                    <li><a href="/posts/{{_id}}">{{headline}}</a></li>
+                {{/each}}
+            </ul>
+        </td>
+        <td><a href="#" class="delete-link">Delete User</a></td>
+    </tr>
+</template>
