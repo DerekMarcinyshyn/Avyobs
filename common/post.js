@@ -19,7 +19,6 @@ Meteor.methods({
         Posts.insert(post, function(error, result) {
             if (result) {
                 postId = result;
-                console.log('--- Posts.inserted --- postId: ' + result);
             }
         });
 

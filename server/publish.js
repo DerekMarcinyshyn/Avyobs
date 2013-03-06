@@ -14,7 +14,7 @@ Meteor.publish('post', function(id) {
     return Posts.find(id);
 });
 
-// full set of posts
+// full set of posts -- this one worked to read
 Meteor.publish('posts', function() {
     return Posts.find();
 });

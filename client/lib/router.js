@@ -28,7 +28,8 @@
         '/users/:id/edit'   : 'user_edit',
         '/signin'           : 'user_signin',
         '/signup'           : 'user_signup',
-        '/posts/:id'        : post
+        '/posts/:id'        : post,
+        '/posts_list'       : 'posts_list'
     });
 
     Meteor.Router.filters({
